@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your website description">
+    <meta name="keywords" content="your, keywords, here">
+    <meta name="author" content="Your Name">
+
+    <!-- Favicon link (replace 'favicon.ico' with your own favicon file) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Fillter Employee Details</title>
+
+    <!-- External CSS stylesheets or internal styles go here -->
+    <!-- Example: <link rel="stylesheet" href="styles.css"> -->
+
+    <!-- External JavaScript files go here -->
+    <!-- Example: <script src="script.js"></script> -->
+     <style>
+      /* Add your custom styles here */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 0 5vw;
+    margin-top: 50px;
+    
+}
+a{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover{
+    background-color: #0056b3;
+
+}
+h1 {
+  color: #495057;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.form-label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.btn {
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background-color: #0056b3;
+
+}
+
+
+/* Optional: Add styles for responsive design */
+@media (max-width: 768px) {
+    /* Add responsive styles here */
+}
+
+     </style>
+</head>
+<body>
+
+    <div class = "container">        
+        <h1>Filter Employee Details</h1>
+        <hr>
+        <form action="/FillterApp" method="post">
+            {% csrf_token %}
+              <label for="name" class="form-label">First/Last Name</label>
+              <input type="text" class="form-control" name="name" id="name" value="{{ name }}">
+              <label for="dept" class="form-label">Department</label>
+              <input type="text" class="form-control" name="dept" id="dept" value="{{ dept }}">
+              <label for="role" class="form-label">Role</label>
+              <input type="text" class="form-control" name="role" id="role" value="{{ role }}">
+
+              {% comment %} <label for="hireDate" class="form-label">Hire Date</label>
+              <input type="number" class="form-control" name="hireDate" id="hireDate" value="{{ hireDate }}"> {% endcomment %}
+              <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <br>
+        <a class="btn btn-primary" href="/" role="button">Add An Employee</a>
+    </div>
+
+    <!-- Your content goes here -->
+
+    <!-- External JavaScript libraries (optional) -->
+    <!-- Example: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+</body>
+</html>

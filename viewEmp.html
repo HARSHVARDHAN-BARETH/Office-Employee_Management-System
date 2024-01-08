@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your website description">
+    <meta name="keywords" content="your, keywords, here">
+    <meta name="author" content="Your Name">
+
+    <!-- Favicon link (replace 'favicon.ico' with your own favicon file) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Your Page Title</title>
+
+    <!-- External CSS stylesheets or internal styles go here -->
+    <!-- Example: <link rel="stylesheet" href="styles.css"> -->
+
+    <!-- External JavaScript files go here -->
+    <!-- Example: <script src="script.js"></script> -->
+<style>
+    /* styles.css */
+
+/* Add general styles for responsiveness */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.end{
+  display: flex;
+  gap: 4vw;
+  justify-content: space-between;
+}
+
+.end a{
+    text-decoration: none;
+}
+
+/* Add responsive styles for the table */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+    color: #212529;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Add responsive styles for buttons */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #00468e;
+}
+
+</style>
+</head>
+<body>
+
+    <div class = "container">        
+        <h1>Office Employee Management System</h1>
+        <hr>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Sr. No.</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Department</th>
+                <th scope="col">Bonus</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Departmen Location</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Role</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Hire Date</th>
+              </tr>
+            </thead>
+            {% for i in emp %}
+            <tbody>
+              <tr>
+                <th scope="row">{{i.id}}</th>
+                <td>{{i.first_name}}</td>
+                <td>{{i.last_name}}</td>
+                <td>{{i.dept.name}}</td>
+                <td>{{i.bonus}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.dept.location}}</td>
+                <td>{{i.salary}}</td>
+                <td>{{i.role.name}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.hireDate}}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+        <div class="end">
+        <a class="btn btn-primary" href="/" role="button">Home Page</a>
+        <a class="btn btn-primary" href="/AddEmp" role="button">Add An Employee</a>
+        <a class="btn btn-primary" href="/RemoveEmp/" role="button">Remove An Employee</a>
+        <a class="btn btn-primary" href="/FillterApp" role="button">Fillter Employee Details</a>
+      </div>  
+
+    </div>
+
+    <!-- Your content goes here -->
+
+    <!-- External JavaScript libraries (optional) -->
+    <!-- Example: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+</body>
+</html>

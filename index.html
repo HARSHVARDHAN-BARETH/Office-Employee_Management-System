@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your website description">
+    <meta name="keywords" content="your, keywords, here">
+    <meta name="author" content="Your Name">
+
+    <!-- Favicon link (replace 'favicon.ico' with your own favicon file) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Your Page Title</title>
+
+    <!-- External CSS stylesheets or internal styles go here -->
+    <!-- Example: <link rel="stylesheet" href="styles.css"> -->
+
+    <!-- External JavaScript files go here -->
+    <!-- Example: <script src="script.js"></script> -->
+   <style>
+    /* Add your custom styles here */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    padding: 0vw 5vw;
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #495057;
+  }
+
+.table {
+    margin-top: 20px;
+}
+
+.btn {
+    margin-right: 10px;
+}
+
+.end{
+    display: flex;
+    justify-content: space-between;
+}
+
+.end a{
+    text-decoration: none;
+    color: #fff;
+    padding: 0.375rem 0.75rem;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.end a:hover{
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #00468e;
+}
+
+.mid {
+    text-align: center;
+    margin-top: 50px;
+    display: flex;    
+    width: 100%;
+    height: 300px;
+    margin-bottom: 3vw;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mid a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.mid a:hover {
+    background-color: #0056b3;
+}
+
+/* Add more styles as needed */
+
+/* Optional: Add styles for responsive design */
+@media (max-width: 768px) {
+    /* Add responsive styles here */
+}
+
+   </style>
+</head>
+<body>
+
+    <div class = "container">        
+        <h1>Office Employee Management System</h1>
+        <hr>
+        
+
+        <div class="mid">
+            <img src="https://img.freepik.com/free-vector/new-employees-requiring-office-work-isolated-flat-vector-illustration-cartoon-hr-manager-hiring-recruiting-personnel-recruitment-vacancy-business-concept_74855-10118.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704499200&semt=ais" alt="">
+            <!-- <a href="/viewEmp">Get Started</a> -->
+        </div>
+
+        <div class="end">
+        <a class="btn btn-primary" href="/viewEmp" role="button">View All Employee</a>
+        <a class="btn btn-primary" href="/AddEmp" role="button">Add An Employee</a>
+        <a class="btn btn-primary" href="/RemoveEmp" role="button">Remove An Employee</a>
+        <a class="btn btn-primary" href="/FillterApp" role="button">Fillter Employee Details</a>
+        </div>
+
+    </div>
+
+    <!-- Your content goes here -->
+
+    <!-- External JavaScript libraries (optional) -->
+    <!-- Example: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+</body>
+</html>

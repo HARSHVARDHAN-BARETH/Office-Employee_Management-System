@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your website description">
+    <meta name="keywords" content="your, keywords, here">
+    <meta name="author" content="Your Name">
+
+    <!-- Favicon link (replace 'favicon.ico' with your own favicon file) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Your Page Title</title>
+
+    <!-- External CSS stylesheets or internal styles go here -->
+    <!-- Example: <link rel="stylesheet" href="styles.css"> -->
+
+    <!-- External JavaScript files go here -->
+    <!-- Example: <script src="script.js"></script> -->
+
+</head>
+<style>
+    /* styles.css */
+
+/* Add general styles for responsiveness */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #495057;
+    text-align: center;
+}
+
+hr {
+    background-color: #007bff;
+    height: 2px;
+    border: none;
+}
+
+.first{
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Style form elements */
+.form-control {
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid #007bff; /* Initial border is hidden */
+    margin-bottom: 15px;
+    padding: 8px 0;
+}
+
+.form-label {
+    width: 20%;
+    margin-left: 2vw;
+}
+
+/* Add the "focused" class to form-control when it is focused */
+.form-control.focused {
+    border-bottom: 1px solid #007bff; /* Show border when focused */
+}
+a{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover{
+    background-color: #0056b3;
+
+}
+/* Style submit button */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 11px 20px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Optional: Add styling for form validation messages */
+.error-message {
+    color: #dc3545; /* Bootstrap danger color */
+    margin-top: 5px;
+}
+
+.success-message {
+    color: #28a745; /* Bootstrap success color */
+    margin-top: 5px;
+}
+
+</style>
+<body>
+
+    <div class = "container">       
+        <h1>Add An Employee</h1>
+        <hr>
+        <form action="/AddEmp" method="post">
+            {% csrf_token %}
+            <div class="first">
+                <label for="first_name" id="first" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" value="{{ first_name }}">
+                <label for="last_name" id="second" class="form-label">Last Name</label>
+                <input type="text" class="form-control" name="last_name" id="last_name" value="{{ last_name }}">  
+            </div>
+            <div class="first">
+                <label for="dept" class="form-label">Department</label>
+                <input type="Number" class="form-control" name="dept" id="dept" value="{{ dept }}">
+                <label for="salary" class="form-label">Salary</label>
+                <input type="Number" class="form-control" name="salary" id="salary"value="{{ salary }}">
+            </div>
+            <div class="first">
+                <label for="bonus" class="form-label">Bonus</label>
+                <input type="number" class="form-control" name="bonus" id="bonus" value="{{ bonus }}">
+                <label for="role" class="form-label">Role</label>
+                <input type="text" class="form-control" name="role" id="role" value="{{ role }}">
+            </div>
+            <div class="first">
+                <label for="phone" class="form-label">Mobile</label>
+                <input type="text" class="form-control" name="phone" id="phone" value="{{ phone }}">
+                <label for="hireDate" class="form-label">Hire Date</label>
+                <input type="number" class="form-control" name="hireDate" id="hireDate" value="{{ hireDate }}">
+            </div>
+              <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/viewEmp">View Employee</a>
+          </form>
+    </div>
+
+    <!-- Your content goes here -->
+
+    <!-- External JavaScript libraries (optional) -->
+    <!-- Example: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+   <script>
+    // Function to add the "focused" class on input focus
+function showBorder(element) {
+    element.classList.add("focused");
+}
+
+// Function to remove the "focused" class on input blur
+function hideBorder(element) {
+    if (!element.value) {
+        element.classList.remove("focused");
+    }
+}
+
+   </script>
+</body>
+</html>
